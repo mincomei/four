@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JTMK - Mobile Web App</title>
+
+  <!-- jQuery Mobile 1.4.5 -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<style>
+ html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  height: 50px;
+}
+
+header span {
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Social Sidebar */
+.social-sidebar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.social-sidebar a img {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: white;
+  border-radius: 6px;
+}
+header nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 8px 12px;
+  background-color: #d1f0e1;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a:hover {
+  background-color: #94B4C1;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #BEE4D0;
+  color: black;
+  text-align: center;
+  padding: 80px 20px;
+  margin-left: 50px; /* Prevent overlap with sidebar */
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.custom-button {
+  background-color: #94B4C1;
+  color: black;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button:hover {
+  background-color: #F5EEDD;
+  color: black;
+}
+
+/* Footer */
+.custom-footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  background: #BEE4D0;
+  color: black;
+}
+
+/* Page Container */
+.page-container {
+  min-height: calc(100vh - 160px);
+  padding: 20px 50px 20px 70px; /* enough left space for sidebar */
+  box-sizing: border-box;
+}
+
+/* List Styling */
+[data-role="listview"] li {
+  padding-left: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+/* Add spacing between header and main content on mobile */
+.hero,
+.page-container {
+  margin-top: 20px;
+}
+
+
+  header nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-sidebar {
+    left: 5px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+    margin-left: 45px; /* preserve space for sidebar */
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .custom-button {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+
+  .page-container {
+    padding: 20px 20px 20px 60px; /* adjust left padding for sidebar */
+  }
+
+  .social-sidebar a img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- Social Sidebar -->
+  <div class="social-sidebar">
+    <a href="https://www.linkedin.com/"><img src="linkedIn.png" alt="LinkedIn"></a>
+    <a href="https://github.com/"><img src="github.png" alt="GitHub"></a>
+    <a href="https://x.com/"><img src="twitter.jpg" alt="Twitter"></a>
+    <a href="https://www.youtube.com/"><img src="youtube.png" alt="YouTube"></a>
+    <a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram"></a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="jtmk.jpg" alt="Logo">
+      <span>JABATAN TEKNOLOGI MAKLUMAT & KOMUNIKASI</span>
+    </div>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- Pages -->
+  <div data-role="page" id="home">
+    <div class="page-container">
+      <div class="hero">
+        <h2>HEY, MY NAME IS JTMK</h2>
+        <p>JTMK is the Department of Information and Communication Technology (JTMK) offering DDT courses at Seberang Perai Polytechnic (PSP).</p>
+        <a href="#projects" class="custom-button">PROJECTS</a>
+      </div>
+    </div>
+    <div class="custom-footer">COPYRIGHT © DDT4A S2 2024/2025. ALL RIGHTS RESERVED.</div>
+  </div>
+
+  <div data-role="page" id="about">
+    <div class="page-container">
+      <h2 style="text-align: center;">About Us</h2>
+      <ul data-role="listview" data-inset="true">
+        <li><img src="hod.jpg" class="ui-li-thumb" alt="Head"><h2>NUR IZZAH YASMIN</h2><p>Head of Department<br>Phone: 010-2949066</p></li>
+        <li><img src="software.jpg" class="ui-li-thumb" alt="Software"><h2>NORSYAFINA SAHAR</h2><p>Program Head (Software)<br>Phone: 013-7676485</p></li>
+        <li><img src="network.jpg" class="ui-li-thumb" alt="Network"><h2>AIMI DALINA</h2><p>Program Head (Network)<br>Phone: 011-23710698</p></li>
+      </ul>
+    </div>
+    <div class="custom-footer">COPYRIGHT © DDT4A S2 2024/2025. ALL RIGHTS RESERVED.</div>
+  </div>
+
+  <div data-role="page" id="projects">
+    <div class="page-container">
+      <h2 style="text-align: center;">Our Projects</h2>
+      <ul data-role="listview" data-inset="true">
+        <li><img src="project1.png" class="ui-li-thumb" alt="Project 1"><h2>CHARITY FUNDRAISING</h2><p><a href="REPORT PROJECT WDT.pdf" target="_blank">View Report</a></p></li>
+        <li><img src="project2.png" class="ui-li-thumb" alt="Project 2"><h2>MOBILE FRAMEWORK CHARITY FUNDRAISING</h2><p><a href="reportProject2.pdf" target="_blank">View Report</a></p></li>
+      </ul>
+    </div>
+    <div class="custom-footer">COPYRIGHT © DDT4A S2 2024/2025. ALL RIGHTS RESERVED.</div>
+  </div>
+
+  <div data-role="page" id="contact">
+    <div class="page-container">
+      <h2 style="text-align: center;">Contact Us</h2>
+      <ul data-role="listview" data-inset="true">
+        <li><a href="tel:0102949066">📞 Call Nur Izzah</a></li>
+        <li><a href="mailto:nurizzah@example.com">✉️ Email Nur Izzah</a></li>
+        <li><a href="https://wa.me/60102949066" target="_blank">💬 WhatsApp Nur Izzah</a></li>
+        <li><a href="tel:0137676485">📞 Call Norsyafina</a></li>
+        <li><a href="mailto:norsyafina@example.com">✉️ Email Norsyafina</a></li>
+        <li><a href="https://wa.me/60137676485" target="_blank">💬 WhatsApp Norsyafina</a></li>
+        <li><a href="tel:01123710698">📞 Call Aimi Dalina</a></li>
+        <li><a href="mailto:aimidalina@example.com">✉️ Email Aimi Dalina</a></li>
+        <li><a href="https://wa.me/601123710698" target="_blank">💬 WhatsApp Aimi Dalina</a></li>
+      </ul>
+    </div>
+    <div class="custom-footer">COPYRIGHT © DDT4A S2 2024/2025. ALL RIGHTS RESERVED.</div>
+  </div>
+
+</body>
+</html>
+
+
+
